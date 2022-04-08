@@ -1,16 +1,29 @@
 // This is for javaScript
 
 // STOPWATCH
-//vars
+// vars to hold values
 
-let seconds = 00;
-let tens = 00;
-let appendTens = document.getElementById('tens');
-let appendSeconds = document.getElementById('seconds');
-const buttonStart = document.getElementById('button-start');
-const buttonStop = document.getElementById('button-stop');
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
 
-//STOPWATCH FUNCTIONALITY
+//TIMER FUNCTIONALITY AND LOGIC
+
 function startTimer(){
+    seconds++;
+
+    //LOGIC TO INCREMENT TO NEXT VALUE
+    if(seconds / 60 === 1){
+        seconds = 0;
+        minutes++;
+        if(minutes / 60 === 1){
+            minutes = 0;
+            hours ++;
+        }
+    }
+
+//DISPLAY TIME TO USER
+    document.querySelector('.display').innerText = hours + ':' + minutes + ':' + seconds;
 }
 
+setInterval(startTimer, 1);
