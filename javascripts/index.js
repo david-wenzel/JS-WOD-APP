@@ -7,6 +7,11 @@ let seconds = 0;
 let minutes = 0;
 let hours = 0;
 
+//VARS TO HOLD DISPLAY VALUES
+let displaySeconds = 0;
+let displayMinutes = 0;
+let displayHours = 0;
+
 //TIMER FUNCTIONALITY AND LOGIC
 
 function startTimer(){
@@ -22,8 +27,29 @@ function startTimer(){
         }
     }
 
+    // DISPLAYS 0 WHEN DIGITS ARE SINGULAR
+    if(seconds < 10){
+        displaySeconds = '0' + seconds.toString();
+    }
+    else{
+        displaySeconds = seconds;
+    }
+    if(minutes < 10){
+        displayMinutes = '0' + minutes.toString();
+    }
+    else{
+        displayMinutes = minutes;
+    }
+    if(hours < 10){
+        displayHours = '0' + hours;
+    }
+    else{
+        displayHours = hours;
+    }
 //DISPLAY TIME TO USER
-    document.querySelector('.display').innerText = hours + ':' + minutes + ':' + seconds;
+    document.querySelector('.display').innerText = displayHours + ':' + displayMinutes + ':' + displaySeconds;
 }
 
-setInterval(startTimer, 1);
+setInterval(startTimer, 1000);
+
+
