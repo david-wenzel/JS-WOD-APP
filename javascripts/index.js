@@ -1,8 +1,7 @@
-// This is for javaScript
+// javaScript
 
 // STOPWATCH
 // vars to hold values
-
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
@@ -12,11 +11,17 @@ let displaySeconds = 0;
 let displayMinutes = 0;
 let displayHours = 0;
 
+//IF I WANT TO REFACTOR AND USE DRY METHOD 
+// let startStopButton = document.getElementById(startstop) 
+
+//VAR TO define TIMER interval FUNCTION
+let interval = null;
+
 //TIMER FUNCTIONALITY AND LOGIC
 
 function startTimer(){
-    seconds++;
-
+    seconds++
+    
     //LOGIC TO INCREMENT TO NEXT VALUE
     if(seconds / 60 === 1){
         seconds = 0;
@@ -26,8 +31,8 @@ function startTimer(){
             hours ++;
         }
     }
-
-    // DISPLAYS 0 WHEN DIGITS ARE SINGULAR
+    
+    // DISPLAYS 0 IN FIRST SPOT WHEN DIGITS ARE SINGULAR
     if(seconds < 10){
         displaySeconds = '0' + seconds.toString();
     }
@@ -46,10 +51,30 @@ function startTimer(){
     else{
         displayHours = hours;
     }
-//DISPLAY TIME TO USER
+    //DISPLAY TIME TO USER
     document.querySelector('.display').innerText = displayHours + ':' + displayMinutes + ':' + displaySeconds;
 }
 
-setInterval(startTimer, 1000);
+// EVENT LISTENER ON THE STARTSTOP BUTTON     
+    document.getElementById('startstop').addEventListener('click', () =>{
+        
+            if( document.getElementById('startstop').innerText === 'START'){
+                //start timer 
+                interval = setInterval(startTimer, 1000);
+                document.getElementById('startstop').innerText ='PAUSE';
+            }else{ 
+                document.getElementById('startstop').innerText ='START';
+                clearInterval(interval)
+            }
+    
+})
 
-
+//END BUTTON
+    document.getElementById('reset').addEventListener('click', () =>{
+        clearInterval(interval);
+        seconds = 0;
+        minutes = 0;
+        hours = 0;
+        document.getElementsByClassName('display').innerText = '00:00:00'
+        document.getElementById('startstop').innerText = 'START'
+    })
