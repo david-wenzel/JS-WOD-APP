@@ -1,0 +1,23 @@
+body {
+    
+    background: radial-gradient(circle, rgba(227,156,123,1) 0%, rgba(227,156,123,1) 13%, rgba(181,156,116,1) 64%, rgba(92,97,66,1) 100%);
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+button {
+    background-color: white;
+  border: none;
+  color: rgba(255, 192, 203, 0.649);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+button:active {
+    transform: scale(0.78); 
+}
+
+.display {
+    font-size: 90px;
+}
