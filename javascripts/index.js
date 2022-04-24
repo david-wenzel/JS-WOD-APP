@@ -114,5 +114,36 @@ window.addEventListener('DOMContentLoaded', function () {
     loadWod()
 
     // about button click
-    
+    const about = document.getElementById('about')
+    const close = document.getElementById('close')
+    function addFlex(id){
+        document.querySelector(id).style.display = 'flex'
+    };
+    function removeFlex(id){
+        document.querySelector(id).style.display = 'none'
+    }
+
+    about.addEventListener('click', () => {
+        addFlex('.about-modal');
+    })    
+
+    close.addEventListener('click', () => {
+        removeFlex('.about-modal');
+    })
+
+    //newsletter modal show
+    const newsletter = document.getElementById('newsletter');
+    const closeNewsletter = document.getElementById('close-newsletter')
+    newsletter.addEventListener('click', () => {
+        addFlex('.newsletter-modal')
+    } )
+    closeNewsletter.addEventListener('click', () => {
+        removeFlex('.newsletter-modal')
+    })
+    //newsletter form
+    const form = document.getElementById('form')
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        form.innerText = 'Thank-You'
+    })
 });
