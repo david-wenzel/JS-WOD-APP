@@ -114,16 +114,5 @@ window.addEventListener('DOMContentLoaded', function () {
     loadWod()
 
     // about button click
-    const aboutLink = document.getElementById('about')
     
-    const renderAboutPage = (e) => {
-        e.preventDefault();
-        alert('hi yayayayay')
-    }
-    
-    const attachAboutLinkEvent = () => {
-        aboutLink.addEventListener('click', renderAboutPage)
-    }
-    
-    attachAboutLinkEvent()
 });
