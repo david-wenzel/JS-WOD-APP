@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-html{
+html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -11,9 +11,10 @@ html{
 
 body.fade {
     opacity: 0;
-  }
+}
+
 body {
-    
+
     background-image: url(https://static01.nyt.com/newsgraphics/2022/01/10/meditation/assets/images/03-1050_x2.jpg);
     /* radial-gradient(circle, rgb(246, 231, 212) 0%, rgba(241,235,225,1) 37%, rgb(247, 244, 238) 80%, rgb(244, 241, 235) 83%, rgba(248,249,242,1) 100%); */
     /* (circle, rgba(227,156,123,1) 0%, rgba(227,156,123,1) 13%, rgba(181,156,116,1) 64%, rgb(224, 227, 212) 100%); */
@@ -23,45 +24,51 @@ body {
     font-style: italic;
     font-weight: lighter;
     opacity: 1;
-    transition-duration: 2.0s;
+    transition-duration: 3.0s;
     transition-property: opacity;
 }
+
 nav {
     padding: 8px;
     padding-right: 78px;
     padding-top: 40px;
 }
 
-.navbar-logo{
+.navbar-logo {
     float: left;
     padding-left: 78px;
 }
 
-.logo-image{
+.logo-image {
     width: 46px;
     height: 46px;
     border-radius: 50%;
     overflow: hidden;
     margin-top: -6px;
 }
+
 .img-fluid {
     width: 46px;
     height: 46px;
 }
 
 nav ul {
-    float: right; 
+    float: right;
 }
-nav ul li{
+
+nav ul li {
     display: inline-block;
     float: left;
 }
-nav ul li:not(:first-child){
+
+nav ul li:not(:first-child) {
     margin-left: 48px;
 }
-nav ul li:not(:last-child){
+
+nav ul li:not(:last-child) {
     margin-right: 24px;
 }
+
 nav ul li a {
     display: inline-block;
     outline: none;
@@ -76,17 +83,18 @@ nav ul li a {
 
 
 button {
-    background-color: rgb(8, 9, 8); 
-  border: none;
-  color: rgba(248, 244, 245, 0.911);
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+    background-color: rgb(8, 9, 8);
+    border: none;
+    color: rgba(248, 244, 245, 0.911);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
+
 button:active {
-    transform: scale(0.78); 
+    transform: scale(0.78);
 }
 
 .display {
@@ -108,11 +116,12 @@ button:active {
     text-align: center;
 }
 
-.workout{
+#workout {
     padding-top: 70px;
 }
 
-p{
+p {
     margin: 0;
     padding: 0;
 }
+
