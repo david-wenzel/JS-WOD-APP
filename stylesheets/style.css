@@ -82,7 +82,7 @@ nav ul li a {
 
 
 
-button {
+button, #submit-button {
     background-color: rgb(8, 9, 8);
     border: none;
     color: rgba(248, 244, 245, 0.911);
@@ -125,3 +125,56 @@ p {
     padding: 0;
 }
 
+.about-modal {
+    width: 100%;
+    height: 100%;
+    background-image: rgba(0, 0, 0, .2);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.about-content{
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    background-size: inherit;
+    padding: 30px;
+    position: relative;
+}
+#close, #close-newsletter{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    cursor: pointer;
+}
+
+.newsletter-modal {
+    width: 100%;
+    height: 100%;
+    background-image: rgba(0, 0, 0, .2);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.newsletter-content{
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    background-size: inherit;
+    padding: 30px;
+    position: relative;
+}
+
+input {
+    padding: 13px 32px;
+    font-size: 16px;
+    border-radius: 0;
+}
