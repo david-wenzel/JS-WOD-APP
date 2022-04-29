@@ -60,7 +60,8 @@ window.addEventListener('DOMContentLoaded', function () {
         //DISPLAY TIME TO USER
         document.querySelector('.display').innerText = displayHours + ':' + displayMinutes + ':' + displaySeconds;
     }
-
+    //wanted to us the || 'or' opporator, but it fires set interval multiple times, may need to refactor in future to clean up
+    
     // EVENT LISTENER ON THE STARTSTOP BUTTON     
     document.getElementById('startstop').addEventListener('click', () => {
 
@@ -69,11 +70,17 @@ window.addEventListener('DOMContentLoaded', function () {
             interval = setInterval(startTimer, 1000);
             document.getElementById('startstop').innerText = 'PAUSE';
             document.querySelector('.display').style.color = '#267326';
-        } else {
+            //restart timer after end
+        }else if(document.getElementById('startstop').innerText === 'NEW ATTEMPT'){
+            interval = setInterval(startTimer, 1000);
+            document.getElementById('startstop').innerText = 'PAUSE';
+            document.querySelector('.display').style.color = '#267326'
+            //pause timer
+        }else {
             document.getElementById('startstop').innerText = 'START';
             clearInterval(interval)
             document.querySelector('.display').style.color = '#b3b300';
-        }
+        } 
 
     })
 
@@ -93,7 +100,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     var date = (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getFullYear()
 
-    document.getElementById('currentDate').innerText = date
+    document.getElementById('current-date').innerText = date
 
     // const wodFromApi = res.workouts[0].img
 
@@ -102,7 +109,7 @@ window.addEventListener('DOMContentLoaded', function () {
             .then(res => res.json())
             .then(res => {
                 const img = document.createElement('img')
-                img.src = res.workouts[res.workouts.length - 1].img
+                img.src = res.workouts[res.workouts.length - 2].img
 
                 const wodResult = document.getElementById('wod')
 
@@ -110,6 +117,8 @@ window.addEventListener('DOMContentLoaded', function () {
                 img.setAttribute("id", "wodImage");
                 img.setAttribute('draggable', 'false')
             })
+            .catch(err => console.log(err))
+            
     }
     loadWod()
 

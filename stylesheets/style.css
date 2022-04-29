@@ -26,6 +26,7 @@ body {
     opacity: 1;
     transition-duration: 3.0s;
     transition-property: opacity;
+    user-select: none;
 }
 
 nav {
@@ -57,7 +58,7 @@ nav ul {
 }
 
 nav ul li {
-    display: inline-block;
+    display: block;
     float: left;
 }
 
@@ -105,16 +106,22 @@ button:active {
 #wodImage {
     height: auto;
     width: auto;
-    max-width: 400px;
-    max-height: auto;
+    max-width: auto;
+    max-height: 550px;
 }
 
 .header {
-    font-size: 3rem;
+    font-size: 4rem;
     padding: 0;
     margin: 0;
     font-weight: lighter;
     text-align: center;
+}
+
+#current-date{
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
 }
 
 #workout {
@@ -167,7 +174,7 @@ p {
 
 .newsletter-content{
     width: 500px;
-    height: 300px;
+    height: 250px;
     background-color: white;
     background-size: inherit;
     padding: 30px;
