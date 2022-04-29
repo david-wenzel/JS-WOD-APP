@@ -2,7 +2,7 @@
 
 ### Overview
 
-INTEGRATE.D Workout-of-the-Day webapp is a simple, single page applicaiton used to;
+INTEGRATED Workout-of-the-Day webapp is a simple, single page applicaiton used to;
 
 -Elegantly and easily display a workout or instruction to users
 -Provide users with an easy to use stopwatch to keep track of thier workout
